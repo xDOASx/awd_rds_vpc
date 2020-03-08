@@ -14,6 +14,6 @@ app.use(bodyParser.json());
 
 app.get('/', async (req, res) => {
     res.status(200).send("Hello World!");
-})
+});
 
 app.listen(PORT, () => console.log(`Music app listening on port ${PORT}!`));
