@@ -20,7 +20,7 @@ Resources:
           export NVM_DIR="$HOME/.nvm";
           . $HOME/.nvm/nvm.sh;
           nvm install node;
-          git clone https://github.com/xDOASx/EC2_AWS_Express.git ~/AWS;
+          git clone https://github.com/xDOASx/awd_rds_vpc.git ~/AWS;
           cd ~/AWS;
           npm install express;
           npm install cors;
