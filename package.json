@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/xDOASx/awd_rds_vpc/issues"
   },
-  "homepage": "https://github.com/xDOASx/awd_rds_vpc#readme"
+  "homepage": "https://github.com/xDOASx/awd_rds_vpc#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
