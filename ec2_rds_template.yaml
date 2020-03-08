@@ -1,0 +1,36 @@
+Resources:
+  UserDataInstance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageId: 'ami-062f7200baf2fa504'
+      KeyName: 'ec2BenKeyPair'
+      InstanceType: 't2.micro'
+      UserData: 
+        Fn::Base64: 
+          !Sub |
+          #!/bin/bash
+          sudo yum -y update;
+          sudo yum -y upgrade;
+          sudo yum -y install git;
+          sudo yum install -y awslogs; 
+          sudo yum install -y express;
+          sudo systemctl start awslogsd; 
+          cd ~/;
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash ;
+          export NVM_DIR="$HOME/.nvm";
+          . $HOME/.nvm/nvm.sh;
+          nvm install node;
+          git clone https://github.com/xDOASx/EC2_AWS_Express.git ~/AWS;
+          cd ~/AWS;
+          npm install express;
+          npm install cors;
+          npm install aws-sdk;
+          node index.js;
+
+  MyInstanceProfile:
+    Type: "AWS::IAM::InstanceProfile"
+    Properties:
+      InstanceProfileName: s3access
+      Path: "/"
+      Roles:
+        - "s3access"
