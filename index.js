@@ -16,4 +16,4 @@ app.get('/', async (req, res) => {
     res.status(200).send("Hello World!");
 })
 
-app.listen(port, () => console.log(`Music app listening on port ${PORT}!`));
+app.listen(PORT, () => console.log(`Music app listening on port ${PORT}!`));
