@@ -12,4 +12,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get('/', async (req, res) => {
+    res.status(200).send("Hello World!");
+})
+
 app.listen(port, () => console.log(`Music app listening on port ${PORT}!`));
